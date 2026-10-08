@@ -1,0 +1,14 @@
+{
+  "name": "Thư Viện - Không gian độc giả",
+  "short_name": "Thư Viện",
+  "start_url": "./index.php",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eef4fb",
+  "theme_color": "#315efb",
+  "description": "Tra cứu, mượn sách và theo dõi hành trình đọc cá nhân.",
+  "icons": [
+    {"src":"assets/app-icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"assets/app-icon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}

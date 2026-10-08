@@ -1,0 +1,755 @@
+/* ========================================================================
+   UI FIXES 2026-09-20
+   Chỉ sửa hiển thị/CSS. Không thay đổi dữ liệu hoặc logic nghiệp vụ.
+   ======================================================================== */
+
+/* ---------- Nền tảng an toàn cho toàn bộ trang động ---------- */
+#content,
+#content .page-shell,
+#content .page-shell > * { min-width:0; }
+
+#content img,
+#content video,
+#content canvas,
+#content svg { max-width:100%; }
+
+#content img { height:auto; }
+
+#content p,
+#content span,
+#content strong,
+#content b,
+#content label,
+#content td,
+#content th,
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+  overflow-wrap:anywhere;
+}
+
+#content input,
+#content select,
+#content textarea,
+#content button { max-width:100%; }
+
+#content textarea { resize:vertical; }
+
+/* Không để tiêu đề/nút trong flex-grid đẩy tràn khung */
+#content .top,
+#content .toolbar,
+#content .employee-toolbar,
+#content .shift-card-head,
+#content .card-head,
+#content .modal-head,
+#content .advanced-home-head,
+#content .borrow-summary-head,
+#content .account-group-head,
+#content .recent-registration-head,
+#content .libinfo-panel-head,
+#content .libinfo-actions,
+#content .reader-card-actions { min-width:0; }
+
+#content .top > *,
+#content .toolbar > *,
+#content .employee-toolbar > *,
+#content .shift-card-head > *,
+#content .card-head > *,
+#content .modal-head > *,
+#content .advanced-home-head > *,
+#content .borrow-summary-head > *,
+#content .account-group-head > * { min-width:0; }
+
+/* ---------- Các class đang được dùng nhưng trước đó chưa có CSS ---------- */
+#content .icon-btn {
+  width:38px;
+  height:38px;
+  min-width:38px;
+  display:inline-grid;
+  place-items:center;
+  border:1px solid #dbe3ee;
+  border-radius:10px;
+  background:#f8fafc;
+  color:#334155;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+  transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;
+}
+#content .icon-btn:hover { background:#eef4ff;border-color:#bfdbfe;color:#1d4ed8;transform:translateY(-1px); }
+#content .icon-btn:focus-visible { outline:3px solid rgba(37,99,235,.22);outline-offset:2px; }
+
+.guest-public-cards { margin-top:0; }
+.reader-profile-home { min-width:0; }
+
+/* ---------- Bảng: luôn đọc được, không phá dữ liệu/cột ---------- */
+#content .table-wrapper,
+#content .table-wrap,
+#content .table-responsive,
+#content .employee-table-wrapper,
+#content .shift-table-wrap,
+#content .dashboard-full-table-scroll,
+#content .history,
+#content .quahan-table,
+#content .dashboard-table { -webkit-overflow-scrolling:touch; }
+
+#content table { font-variant-numeric:tabular-nums; }
+#content td,
+#content th { vertical-align:middle; }
+
+/* ---------- Popup/modal: tránh che nội dung và mất nút ---------- */
+#content .modal,
+#content .reader-card-modal,
+#content .account-modal,
+#content .book-detail-modal,
+#content .copy-qr-modal,
+#content .smart-modal {
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+
+#content .modal-box,
+#content .reader-card-dialog,
+#content .account-modal-box,
+#content .book-detail-modal-box,
+#content .copy-qr-modal-box,
+#content .smart-modal-box {
+  max-width:calc(100vw - 28px);
+  max-height:calc(100dvh - 28px);
+}
+
+/* ---------- Mobile/tablet: ưu tiên không che chữ, không tràn ngang ---------- */
+@media (max-width:900px) {
+  .dashboard-main { min-width:0; }
+  #content .page-shell { overflow-x:hidden; }
+
+  #content .top,
+  #content .employee-toolbar,
+  #content .borrow-summary-head,
+  #content .advanced-home-head,
+  #content .account-group-head,
+  #content .recent-registration-head {
+    gap:12px;
+    flex-wrap:wrap;
+  }
+
+  #content .top h2,
+  #content .employee-toolbar h2,
+  #content .advanced-home-head h2 { flex:1 1 260px; }
+
+  #content .form-grid,
+  #content .grid,
+  #content .employee-grid { min-width:0; }
+}
+
+@media (max-width:700px) {
+  #content { padding-bottom:18px; }
+
+  #content .page-shell .main,
+  #content .page-shell .content,
+  #content .page-shell .wrapper,
+  #content .page-shell .app,
+  #content .page-shell .container-fluid,
+  #content .page-shell .reader-container,
+  #content .page-shell .docgia-container,
+  #content .page-shell .employee-container,
+  #content .page-shell .quahan-container,
+  #content .page-shell .container { padding-bottom:18px; }
+
+  #content .modal,
+  #content .reader-card-modal,
+  #content .account-modal,
+  #content .book-detail-modal,
+  #content .copy-qr-modal,
+  #content .smart-modal { padding:10px !important; }
+
+  #content .modal-box,
+  #content .reader-card-dialog,
+  #content .account-modal-box,
+  #content .book-detail-modal-box,
+  #content .copy-qr-modal-box,
+  #content .smart-modal-box {
+    width:100% !important;
+    max-width:100% !important;
+    max-height:calc(100dvh - 20px) !important;
+    overflow:auto !important;
+  }
+
+  #content .modal-head,
+  #content .shift-card-head,
+  #content .card-head,
+  #content .libinfo-panel-head { align-items:flex-start; }
+
+  #content .reader-card-actions,
+  #content .shift-actions { width:100%; }
+
+  #content .reader-card-actions > *,
+  #content .shift-actions > * { min-width:0; }
+
+  #content .dashboard-list-count { text-align:left; }
+}
+
+@media (max-width:520px) {
+  .dashboard-header { padding:12px 14px !important; }
+  .title h1 { font-size:21px !important;line-height:1.2; }
+  .title p { font-size:12px;line-height:1.45; }
+
+  #content .top,
+  #content .employee-toolbar,
+  #content .borrow-summary-head,
+  #content .advanced-home-head,
+  #content .account-group-head,
+  #content .recent-registration-head { align-items:stretch; }
+
+  #content .top > button,
+  #content .employee-toolbar > button,
+  #content .advanced-home-head > button,
+  #content .advanced-home-head > .advanced-link-btn { width:100%; }
+
+  #content .icon-btn { width:36px;min-width:36px;height:36px; }
+}
+
+/* ========================================================================
+   DARK MODE - bổ sung những vùng trước đây còn trắng/chói hoặc thiếu tương phản
+   ======================================================================== */
+body.dark-mode {
+  color-scheme:dark;
+  --ui-dark-bg:#0f1723;
+  --ui-dark-panel:#172033;
+  --ui-dark-panel-2:#111b2b;
+  --ui-dark-hover:#20304a;
+  --ui-dark-border:#304058;
+  --ui-dark-border-strong:#40516b;
+  --ui-dark-text:#e8eef7;
+  --ui-dark-muted:#9eacc0;
+  --ui-dark-link:#8cb4ff;
+}
+
+/* Header + thanh điều hướng */
+body.dark-mode .dashboard-header,
+body.dark-mode .mobile-bottom-nav {
+  background:var(--ui-dark-panel) !important;
+  border-color:var(--ui-dark-border) !important;
+  box-shadow:0 10px 28px rgba(0,0,0,.18) !important;
+}
+body.dark-mode .menu-toggle,
+body.dark-mode .icon-btn {
+  background:#202c40 !important;
+  color:#dbe7f7 !important;
+  border-color:#3a4a63 !important;
+}
+body.dark-mode .menu-toggle:hover,
+body.dark-mode .icon-btn:hover { background:#273750 !important;color:#fff !important; }
+
+/* Card/panel bị sót ở các module */
+body.dark-mode #content .guest-welcome,
+body.dark-mode #content .guest-login-callout,
+body.dark-mode #content .borrow-summary-card,
+body.dark-mode #content .borrow-summary-total,
+body.dark-mode #content .docgia-info-card,
+body.dark-mode #content .reader-self-profile,
+body.dark-mode #content .reader-profile-metrics > div,
+body.dark-mode #content .reader-card-dialog,
+body.dark-mode #content .reader-profile-content,
+body.dark-mode #content .employee-summary-card,
+body.dark-mode #content .employee-stat-card,
+body.dark-mode #content .shift-now,
+body.dark-mode #content .shift-calendar-card,
+body.dark-mode #content .calendar-shift-item,
+body.dark-mode #content .my-shift-item,
+body.dark-mode #content .today-roster-shift,
+body.dark-mode #content .assignment-shift-option,
+body.dark-mode #content .new-registration-panel,
+body.dark-mode #content .recent-registration-box,
+body.dark-mode #content .recent-registration-item,
+body.dark-mode #content .backup-details > *,
+body.dark-mode #content .system-info-row,
+body.dark-mode #content .info-row,
+body.dark-mode #content .libinfo-about-card,
+body.dark-mode #content .libinfo-sync,
+body.dark-mode #content .selected-reader,
+body.dark-mode #content .achievement,
+body.dark-mode #content .receipt,
+body.dark-mode #content .dashboard-list-search,
+body.dark-mode #content .profile-chip,
+body.dark-mode #content .quick-actions button,
+body.dark-mode #content .home-book button {
+  background:var(--ui-dark-panel) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+  box-shadow:none !important;
+}
+
+/* Những vùng phụ nên tối hơn card chính */
+body.dark-mode #content .shift-calendar-detail,
+body.dark-mode #content .assignment-multi-block,
+body.dark-mode #content .selected-reader,
+body.dark-mode #content .borrow-summary-total,
+body.dark-mode #content .libinfo-item,
+body.dark-mode #content .libinfo-about-card,
+body.dark-mode #content .libinfo-sync,
+body.dark-mode #content .reader-profile-metrics > div,
+body.dark-mode #content .recent-registration-item,
+body.dark-mode #content .backup-details > * {
+  background:var(--ui-dark-panel-2) !important;
+}
+
+/* Nội dung Thông tin thư viện */
+body.dark-mode #content .libinfo-hero {
+  background:linear-gradient(135deg,#172033 0%,#1d2940 100%) !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .libinfo-panel,
+body.dark-mode #content .libinfo-summary-card {
+  background:var(--ui-dark-panel) !important;
+  border-color:var(--ui-dark-border) !important;
+  box-shadow:none !important;
+}
+body.dark-mode #content .libinfo-badge { background:#18345a !important;color:#9fc0ff !important; }
+body.dark-mode #content .libinfo-panel-icon,
+body.dark-mode #content .libinfo-summary-card i { background:#1f3556 !important;color:#8cb4ff !important; }
+body.dark-mode #content .libinfo-panel-icon.purple { background:#30254a !important;color:#c4a7ff !important; }
+body.dark-mode #content .libinfo-item-icon.blue { background:#1f3556 !important;color:#8cb4ff !important; }
+body.dark-mode #content .libinfo-item-icon.pink { background:#44252c !important;color:#ff9baa !important; }
+body.dark-mode #content .libinfo-item-icon.green { background:#17382b !important;color:#7ee2aa !important; }
+body.dark-mode #content .libinfo-item-icon.amber { background:#403216 !important;color:#f7ca65 !important; }
+body.dark-mode #content .libinfo-btn.light { background:#1a2639 !important;color:#9fc0ff !important;border-color:#40516b !important; }
+
+/* Form: tránh nền trắng và chữ tối bị chìm */
+body.dark-mode #content input,
+body.dark-mode #content select,
+body.dark-mode #content textarea,
+body.dark-mode #content .form-control,
+body.dark-mode #content .form-select,
+body.dark-mode #content .search-box,
+body.dark-mode #content .dashboard-list-search {
+  background:var(--ui-dark-panel-2) !important;
+  color:#f0f5ff !important;
+  border-color:var(--ui-dark-border-strong) !important;
+}
+body.dark-mode #content input:focus,
+body.dark-mode #content select:focus,
+body.dark-mode #content textarea:focus,
+body.dark-mode #content .form-control:focus,
+body.dark-mode #content .form-select:focus {
+  border-color:#5b8ff9 !important;
+  box-shadow:0 0 0 3px rgba(91,143,249,.16) !important;
+  outline:none !important;
+}
+body.dark-mode #content input::placeholder,
+body.dark-mode #content textarea::placeholder { color:#8291a7 !important;opacity:1 !important; }
+
+/* Bảng */
+body.dark-mode #content table,
+body.dark-mode #content .smart-table { background:var(--ui-dark-panel) !important;color:var(--ui-dark-text) !important; }
+body.dark-mode #content thead,
+body.dark-mode #content thead tr,
+body.dark-mode #content thead th,
+body.dark-mode #content .smart-table th {
+  background:#22314a !important;
+  color:#f5f8ff !important;
+  border-color:#3a4a63 !important;
+}
+body.dark-mode #content tbody tr,
+body.dark-mode #content tbody td,
+body.dark-mode #content .smart-table td {
+  background:var(--ui-dark-panel) !important;
+  color:#dbe6f5 !important;
+  border-color:#2a394e !important;
+}
+body.dark-mode #content tbody tr:hover td { background:#1d2a40 !important;color:#fff !important; }
+
+/* Ca làm: sửa toàn bộ trạng thái sáng chói */
+body.dark-mode #content .shift-now.active,
+body.dark-mode #content .my-shift-item.live,
+body.dark-mode #content .today-roster-shift.live,
+body.dark-mode #content .calendar-shift-item.live { background:#123323 !important;border-color:#287a4b !important; }
+body.dark-mode #content .shift-now.upcoming,
+body.dark-mode #content .my-shift-item.upcoming,
+body.dark-mode #content .shift-calendar-day.today { background:#173255 !important;border-color:#335d91 !important; }
+body.dark-mode #content .shift-current-row td { background:#123323 !important; }
+body.dark-mode #content .shift-today-row td { background:#18283e !important; }
+body.dark-mode #content .shift-calendar-weekdays { background:#1b293e !important;border-color:var(--ui-dark-border) !important; }
+body.dark-mode #content .shift-calendar-day { background:var(--ui-dark-panel) !important;color:#dbe6f5 !important;border-color:var(--ui-dark-border) !important; }
+body.dark-mode #content .shift-calendar-day:hover { background:var(--ui-dark-hover) !important; }
+body.dark-mode #content .shift-calendar-day.outside { background:#0d1522 !important;color:#65738a !important; }
+body.dark-mode #content .assignment-shift-option:hover { background:#1d2d46 !important;border-color:#55749d !important; }
+body.dark-mode #content .assignment-shift-option:has(input:checked) { background:#18345a !important;border-color:#5b8ff9 !important; }
+body.dark-mode #content .assignment-date-remove { background:#30202a !important;color:#ff98a7 !important;border-color:#6a3340 !important; }
+body.dark-mode #content .assignment-date-remove:hover { background:#3c2430 !important; }
+body.dark-mode #content .assignment-selection-summary { background:#18345a !important;color:#9fc0ff !important; }
+body.dark-mode #content .assignment-selection-summary.empty { background:#141f30 !important;color:var(--ui-dark-muted) !important; }
+
+/* Smart/Nâng cao */
+body.dark-mode #content .smart-hero { background:linear-gradient(135deg,#172033,#202d45) !important;border-color:#344157 !important; }
+body.dark-mode #content .smart-btn { background:#202c40 !important;color:#e7edf7 !important;border-color:#3a4a63 !important; }
+body.dark-mode #content .smart-btn.primary { background:#315efb !important;color:#fff !important;border-color:#315efb !important; }
+body.dark-mode #content .smart-btn.success { background:#157a59 !important;color:#fff !important;border-color:#238b69 !important; }
+body.dark-mode #content .smart-btn.danger { background:#a93549 !important;color:#fff !important;border-color:#b94659 !important; }
+body.dark-mode #content .smart-table th { background:#1d293d !important; }
+body.dark-mode #content .chip { background:#1d3151 !important;color:#dbe8ff !important; }
+body.dark-mode #content .chip button { color:#cbd7e8 !important; }
+body.dark-mode #content .achievement { background:#3d3216 !important;color:#f8de87 !important;border-color:#725d24 !important; }
+body.dark-mode #content .receipt { background:#111b2b !important;border-color:#526079 !important; }
+
+/* Màu chữ phụ: bớt chói nhưng vẫn đủ tương phản */
+body.dark-mode #content .shift-card-head span,
+body.dark-mode #content .shift-stat span,
+body.dark-mode #content .calendar-detail-empty,
+body.dark-mode #content .calendar-shift-info span,
+body.dark-mode #content .my-shift-time,
+body.dark-mode #content .my-shift-note,
+body.dark-mode #content .reader-profile-metrics span,
+body.dark-mode #content .reader-history small,
+body.dark-mode #content .libinfo-hero p,
+body.dark-mode #content .libinfo-panel-head p,
+body.dark-mode #content .libinfo-item span,
+body.dark-mode #content .libinfo-section-label,
+body.dark-mode #content .libinfo-about-card p,
+body.dark-mode #content .libinfo-sync p,
+body.dark-mode #content .smart-hero p,
+body.dark-mode #content .metric span,
+body.dark-mode #content .book-card p,
+body.dark-mode #content .dashboard-list-count {
+  color:var(--ui-dark-muted) !important;
+}
+
+body.dark-mode #content .calendar-detail-empty strong,
+body.dark-mode #content .calendar-shift-info > strong,
+body.dark-mode #content .my-shift-name strong,
+body.dark-mode #content .libinfo-hero h2,
+body.dark-mode #content .libinfo-panel-head h3,
+body.dark-mode #content .libinfo-summary-card strong,
+body.dark-mode #content .libinfo-item strong,
+body.dark-mode #content .libinfo-about-card strong,
+body.dark-mode #content .libinfo-sync strong {
+  color:#edf4ff !important;
+}
+
+/* Link/nút nhẹ */
+body.dark-mode #content a:not(.btn):not(.libinfo-btn) { color:var(--ui-dark-link); }
+body.dark-mode #content .secondary-btn,
+body.dark-mode #content .btn-outline,
+body.dark-mode #content .calendar-nav-btn,
+body.dark-mode #content .calendar-today-btn,
+body.dark-mode #content .shift-btn.secondary,
+body.dark-mode #content .reader-card-btn.secondary,
+body.dark-mode #content .dashboard-back-btn {
+  background:#202c40 !important;
+  color:#dbe7f7 !important;
+  border-color:#3a4a63 !important;
+}
+body.dark-mode #content .secondary-btn:hover,
+body.dark-mode #content .btn-outline:hover,
+body.dark-mode #content .calendar-nav-btn:hover,
+body.dark-mode #content .calendar-today-btn:hover,
+body.dark-mode #content .shift-btn.secondary:hover,
+body.dark-mode #content .reader-card-btn.secondary:hover,
+body.dark-mode #content .dashboard-back-btn:hover {
+  background:#273750 !important;
+  color:#fff !important;
+}
+
+/* Badge trạng thái giữ ý nghĩa màu nhưng giảm độ chói */
+body.dark-mode #content .pill.good,
+body.dark-mode #content .shift-status:not(.off) { background:#17382b !important;color:#8de8b5 !important; }
+body.dark-mode #content .pill.warn,
+body.dark-mode #content .status-warning { background:#403216 !important;color:#f7d579 !important; }
+body.dark-mode #content .pill.bad,
+body.dark-mode #content .shift-status.off { background:#44252c !important;color:#ff9baa !important; }
+
+/* Popup backdrop và thân popup */
+body.dark-mode #content .modal,
+body.dark-mode #content .reader-card-modal,
+body.dark-mode #content .account-modal,
+body.dark-mode #content .book-detail-modal,
+body.dark-mode #content .copy-qr-modal,
+body.dark-mode #content .smart-modal { background:rgba(3,8,16,.72) !important; }
+body.dark-mode #content .modal-box,
+body.dark-mode #content .reader-card-dialog,
+body.dark-mode #content .account-modal-box,
+body.dark-mode #content .book-detail-modal-box,
+body.dark-mode #content .copy-qr-modal-box,
+body.dark-mode #content .smart-modal-box {
+  background:var(--ui-dark-panel) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+  box-shadow:0 24px 70px rgba(0,0,0,.42) !important;
+}
+
+/* QR/thẻ thư viện: giữ vùng QR trắng để quét được */
+body.dark-mode #content .reader-card-qr,
+body.dark-mode #content .library-card .qr { background:#fff !important;color:#0f172a !important; }
+body.dark-mode #content .digital-reader-card,
+body.dark-mode #content .library-card { color:#fff !important; }
+
+/* Focus rõ ràng, không chói */
+body.dark-mode button:focus-visible,
+body.dark-mode a:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode select:focus-visible,
+body.dark-mode textarea:focus-visible {
+  outline:3px solid rgba(91,143,249,.34) !important;
+  outline-offset:2px;
+}
+
+/* ========================================================================
+   DARK MODE HOTFIX v2 - các vùng còn sót theo ảnh kiểm tra 20/09/2026
+   Chỉ sửa hiển thị. Không tác động dữ liệu/logic.
+   ======================================================================== */
+
+/* 1) Cài đặt / Thông tin hệ thống: system-item được JS tạo động */
+body.dark-mode #content .system-card,
+body.dark-mode #content .system-list,
+body.dark-mode #content .system-item {
+  background:var(--ui-dark-panel) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .system-item {
+  background:var(--ui-dark-panel-2) !important;
+  border:1px solid var(--ui-dark-border) !important;
+}
+body.dark-mode #content .system-item span { color:#cbd7e8 !important; }
+body.dark-mode #content .system-item strong { color:#f0f5ff !important; }
+
+/* 2) Bảng Sách / Mượn-Trả: bỏ toàn bộ dải trắng ở bao bảng + footer + phân trang */
+body.dark-mode #content .table-card,
+body.dark-mode #content .table-scroll,
+body.dark-mode #content .table-footer,
+body.dark-mode #content .pagination,
+body.dark-mode #content .table-wrap,
+body.dark-mode #content .employee-table-wrapper,
+body.dark-mode #content .dashboard-full-table,
+body.dark-mode #content .dashboard-full-table-scroll {
+  background:var(--ui-dark-panel) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .table-footer,
+body.dark-mode #content .dashboard-list-count,
+body.dark-mode #content #summaryText {
+  color:var(--ui-dark-muted) !important;
+}
+body.dark-mode #content .page-btn,
+body.dark-mode #content .pagination button,
+body.dark-mode #content .pagination a {
+  background:#172033 !important;
+  color:#dbe7f7 !important;
+  border-color:#3a4a63 !important;
+}
+body.dark-mode #content .page-btn:hover:not(:disabled),
+body.dark-mode #content .pagination button:hover:not(:disabled),
+body.dark-mode #content .pagination a:hover {
+  background:#22314a !important;
+  color:#fff !important;
+  border-color:#55749d !important;
+}
+body.dark-mode #content .page-btn.active,
+body.dark-mode #content .pagination button.active,
+body.dark-mode #content .pagination .active > a,
+body.dark-mode #content .pagination .active > button {
+  background:#2563eb !important;
+  color:#fff !important;
+  border-color:#2563eb !important;
+}
+
+/* 3) Dashboard Quản lý / Nhân viên / Độc giả: các khung tổng hợp còn trắng */
+body.dark-mode #content .dashboard-table-area,
+body.dark-mode #content .dashboard-table,
+body.dark-mode #content .history,
+body.dark-mode #content .dashboard-full-list {
+  background:transparent !important;
+  color:var(--ui-dark-text) !important;
+}
+body.dark-mode #content .dashboard-table {
+  background:var(--ui-dark-panel) !important;
+  border:1px solid var(--ui-dark-border) !important;
+  box-shadow:none !important;
+}
+body.dark-mode #content .dashboard-table h2,
+body.dark-mode #content .history h2 {
+  color:#edf4ff !important;
+}
+body.dark-mode #content .dashboard-table .view-all,
+body.dark-mode #content .dashboard-table .view-all a,
+body.dark-mode #content .history .view-all,
+body.dark-mode #content .history .view-all a {
+  color:var(--ui-dark-link) !important;
+}
+body.dark-mode #content .dashboard-data-row:hover,
+body.dark-mode #content .dashboard-table tbody tr:hover,
+body.dark-mode #content .history tbody tr:hover {
+  background:#1d2a40 !important;
+}
+body.dark-mode #content .dashboard-data-row:hover td,
+body.dark-mode #content .dashboard-table tbody tr:hover td,
+body.dark-mode #content .history tbody tr:hover td {
+  background:#1d2a40 !important;
+  color:#fff !important;
+}
+
+/* 4) Admin -> Quản lý tài khoản & phân quyền */
+body.dark-mode #content .account-card,
+body.dark-mode #content .account-groups,
+body.dark-mode #content .account-group,
+body.dark-mode #content .staff-account-group,
+body.dark-mode #content .customer-account-group {
+  background:var(--ui-dark-panel) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+  box-shadow:none !important;
+}
+body.dark-mode #content .account-group-head {
+  background:#1b293e !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .account-group-head h4,
+body.dark-mode #content .account-group-head h4 i {
+  color:#edf4ff !important;
+}
+body.dark-mode #content .staff-account-group .account-group-head h4 i { color:#8cb4ff !important; }
+body.dark-mode #content .customer-account-group .account-group-head h4 i { color:#7ee2aa !important; }
+body.dark-mode #content .account-group-head p { color:var(--ui-dark-muted) !important; }
+body.dark-mode #content .account-count {
+  background:#293754 !important;
+  color:#c7d8ff !important;
+  border:1px solid #40516b !important;
+}
+body.dark-mode #content .customer-account-group .account-count {
+  background:#17382b !important;
+  color:#8de8b5 !important;
+  border-color:#287a4b !important;
+}
+
+/* Khách hàng mới đăng ký / Đăng ký gần nhất */
+body.dark-mode #content .new-registration-panel { background:transparent !important; }
+body.dark-mode #content .new-registration-notice {
+  background:linear-gradient(135deg,#17263d,#192c49) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:#35547c !important;
+  box-shadow:none !important;
+}
+body.dark-mode #content .new-registration-text span { color:#aebbd0 !important; }
+body.dark-mode #content .new-registration-text strong { color:#eef4ff !important; }
+body.dark-mode #content .new-registration-text strong b { color:#79a8ff !important; }
+body.dark-mode #content .recent-registration-box {
+  background:var(--ui-dark-panel-2) !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .recent-registration-head {
+  background:#1b293e !important;
+  color:#eaf1fb !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .recent-registration-head small { color:#9eacc0 !important; }
+body.dark-mode #content .recent-registration-list,
+body.dark-mode #content .recent-registration-item,
+body.dark-mode #content .recent-registration-empty {
+  background:var(--ui-dark-panel-2) !important;
+  color:#dbe6f5 !important;
+  border-color:#2a394e !important;
+}
+body.dark-mode #content .recent-registration-info strong { color:#eef4ff !important; }
+body.dark-mode #content .recent-registration-info span,
+body.dark-mode #content .recent-registration-time span { color:#aebbd0 !important; }
+body.dark-mode #content .recent-registration-time small { color:#7ee2aa !important; }
+
+/* Bảng tài khoản */
+body.dark-mode #content .account-group .table-wrap,
+body.dark-mode #content .account-group table,
+body.dark-mode #content .account-group tbody,
+body.dark-mode #content .account-group tbody tr,
+body.dark-mode #content .account-group tbody td {
+  background:var(--ui-dark-panel) !important;
+  color:#dbe6f5 !important;
+  border-color:#2a394e !important;
+}
+body.dark-mode #content .account-group thead,
+body.dark-mode #content .account-group thead tr,
+body.dark-mode #content .account-group thead th {
+  background:#22314a !important;
+  color:#f5f8ff !important;
+  border-color:#3a4a63 !important;
+}
+body.dark-mode #content .account-group tbody tr:hover td {
+  background:#1d2a40 !important;
+  color:#fff !important;
+}
+
+/* Modal quản lý tài khoản */
+body.dark-mode #content .account-modal-head,
+body.dark-mode #content .account-modal-actions {
+  background:var(--ui-dark-panel) !important;
+  border-color:var(--ui-dark-border) !important;
+}
+body.dark-mode #content .account-modal-head h3 { color:#eef4ff !important; }
+body.dark-mode #content .account-modal-head p,
+body.dark-mode #content .account-note { color:#9eacc0 !important; }
+body.dark-mode #content .account-form-grid label { color:#cbd7e8 !important; }
+
+/* 5) Khung cài đặt khác: tránh sót nền sáng */
+body.dark-mode #content .stat-item {
+  background:var(--ui-dark-panel-2) !important;
+  color:#cbd7e8 !important;
+  border:1px solid var(--ui-dark-border) !important;
+}
+body.dark-mode #content .stat-item strong { color:#eef4ff !important; }
+
+/* Action buttons dạng ô trắng: chuyển nền tối nhưng giữ màu icon trạng thái */
+body.dark-mode #content .action-btn:not(.delete-btn):not(.edit-btn),
+body.dark-mode #content .actions button:not(.btn-danger):not(.btn-success):not(.btn-primary),
+body.dark-mode #content .table-wrap button:not(.btn-primary):not(.btn-danger):not(.btn-success):not(.btn-warning) {
+  background:#202c40 !important;
+  border-color:#40516b !important;
+  color:#dbe7f7 !important;
+}
+
+/* Không để CSS nền trắng riêng của các trang thắng dark mode */
+body.dark-mode #content .page-shell .table-card,
+body.dark-mode #content .page-shell .dashboard-table,
+body.dark-mode #content .page-shell .stat-card,
+body.dark-mode #content .page-shell .card,
+body.dark-mode #content .page-shell .settings-card {
+  background:var(--ui-dark-panel) !important;
+  color:var(--ui-dark-text) !important;
+  border-color:var(--ui-dark-border) !important;
+  box-shadow:none !important;
+}
+
+/* === V8: Header/top bar không bám theo màn hình khi cuộn === */
+.dashboard-header,
+body.guest-motion-active .dashboard-header,
+body.staff-motion-active .dashboard-header,
+.dark-mode .dashboard-header,
+.dark-mode body.guest-motion-active .dashboard-header,
+.dark-mode body.staff-motion-active .dashboard-header {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: auto !important;
+    transform: none !important;
+}
+body.guest-motion-active .dashboard-header.guest-header-scrolled,
+body.staff-motion-active .dashboard-header.staff-header-scrolled,
+.dark-mode body.guest-motion-active .dashboard-header.guest-header-scrolled,
+.dark-mode body.staff-motion-active .dashboard-header.staff-header-scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* V9: tránh trang con bị cắt khi browser zoom lớn */
+.dashboard-main,
+#content,
+#content .page-shell,
+#content .page-shell > *{
+    min-width:0 !important;
+}
+#content .page-shell{
+    max-width:100% !important;
+}

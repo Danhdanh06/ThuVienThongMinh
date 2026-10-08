@@ -1,0 +1,5 @@
+const CACHE='qlthuvien-reader-v22';
+const STATIC=['./offline.html','./css/trangchu.css','./css/reader-experience.css','./css/ui-fixes.css','./css/dark-mode.css','./js/main.js','./js/reader-experience.js','./assets/app-icon-192.png','./assets/app-icon-512.png'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(STATIC)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
+self.addEventListener('fetch',e=>{const req=e.request;if(req.method!=='GET')return;const url=new URL(req.url);if(url.origin!==location.origin)return;if(req.mode==='navigate'){e.respondWith(fetch(req).catch(()=>caches.match('./offline.html')));return}if(/\.(?:css|js|png|jpg|jpeg|svg|webp|woff2?)$/i.test(url.pathname)){e.respondWith(caches.match(req).then(hit=>hit||fetch(req).then(res=>{const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy));return res})));}});

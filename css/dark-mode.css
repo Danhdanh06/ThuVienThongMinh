@@ -1,0 +1,357 @@
+/* ===== Dark mode toàn hệ thống ===== */
+body.dark-mode,
+body.dark-mode .dashboard-main,
+body.dark-mode #content,
+body.dark-mode .page-container,
+body.dark-mode .content-wrapper,
+body.dark-mode .main-content {
+  background:#0f1723 !important;
+  color:#e8eef7 !important;
+}
+body.dark-mode .dashboard-header{background:#0f1723 !important;border-color:#2d3a4f !important}
+body.dark-mode .title h1,body.dark-mode .title p,body.dark-mode h1,body.dark-mode h2,body.dark-mode h3,body.dark-mode h4,body.dark-mode h5,body.dark-mode h6,
+body.dark-mode label,body.dark-mode .form-label,body.dark-mode .card-title,body.dark-mode .section-title,
+body.dark-mode .table td,body.dark-mode .table th,body.dark-mode td,body.dark-mode th,
+body.dark-mode p,body.dark-mode .text-dark,body.dark-mode .text-body {color:#e8eef7 !important}
+body.dark-mode small,body.dark-mode .muted,body.dark-mode .text-muted,body.dark-mode .form-text,body.dark-mode .subtitle {color:#9eacc0 !important}
+
+/* cards / panels / forms */
+body.dark-mode .card,body.dark-mode .dashboard-card,body.dark-mode .stat-card,body.dark-mode .form-container,
+body.dark-mode .form-section,body.dark-mode .table-container,body.dark-mode .table-wrapper,body.dark-mode .filter-section,
+body.dark-mode .search-section,body.dark-mode .content-card,body.dark-mode .section-card,body.dark-mode .panel,
+body.dark-mode .shift-card,body.dark-mode .smart-card,body.dark-mode .smart-panel,body.dark-mode .metric,
+body.dark-mode .modal-content,body.dark-mode .dropdown,body.dark-mode .admin-info,
+body.dark-mode .global-command-box,body.dark-mode .book-detail-modal,body.dark-mode .reader-card-modal,
+body.dark-mode .settings-card,body.dark-mode .info-card,body.dark-mode .toolbar,body.dark-mode .filter-bar {
+  background:#172033 !important;color:#e8eef7 !important;border-color:#304058 !important;box-shadow:none !important;
+}
+body.dark-mode .card-header,body.dark-mode .modal-header,body.dark-mode .modal-footer,
+body.dark-mode .shift-card-head,body.dark-mode .smart-card header,body.dark-mode .table-header,
+body.dark-mode .form-header {background:#172033 !important;color:#e8eef7 !important;border-color:#304058 !important}
+
+/* controls */
+body.dark-mode input,body.dark-mode select,body.dark-mode textarea,
+body.dark-mode .form-control,body.dark-mode .form-select,body.dark-mode .search-input,
+body.dark-mode .input-group-text,body.dark-mode .global-search-row input {
+  background:#111b2b !important;color:#eef4ff !important;border-color:#3a4a63 !important;box-shadow:none !important;
+}
+body.dark-mode input::placeholder,body.dark-mode textarea::placeholder {color:#8190a6 !important;opacity:1}
+body.dark-mode input:disabled,body.dark-mode select:disabled,body.dark-mode textarea:disabled,
+body.dark-mode .form-control:disabled {background:#1b2739 !important;color:#8291a7 !important;opacity:1}
+body.dark-mode select option{background:#111b2b !important;color:#eef4ff !important}
+body.dark-mode input[type="date"],body.dark-mode input[type="time"]{color-scheme:dark}
+body.dark-mode input[type="checkbox"],body.dark-mode input[type="radio"]{accent-color:#4f8cff}
+
+/* tables */
+body.dark-mode table,body.dark-mode .table {--bs-table-bg:transparent;--bs-table-color:#e8eef7;--bs-table-border-color:#304058;color:#e8eef7 !important;background:#172033 !important}
+body.dark-mode thead,body.dark-mode thead tr,body.dark-mode thead th,
+body.dark-mode .table thead th {background:#22314a !important;color:#f7faff !important;border-color:#3a4a63 !important}
+body.dark-mode tbody,body.dark-mode tbody tr,body.dark-mode tbody td,
+body.dark-mode .table tbody td {background:#172033 !important;color:#dbe6f5 !important;border-color:#2a394e !important}
+body.dark-mode tbody tr:hover td,body.dark-mode .table-hover>tbody>tr:hover>* {background:#1d2a40 !important;color:#fff !important}
+
+/* Bootstrap / dropdown / list */
+body.dark-mode .dropdown-menu,body.dark-mode .list-group-item,body.dark-mode .accordion-item,
+body.dark-mode .offcanvas,body.dark-mode .toast {background:#172033 !important;color:#e8eef7 !important;border-color:#304058 !important}
+body.dark-mode .dropdown-menu a,body.dark-mode .dropdown a {color:#e8eef7 !important}
+body.dark-mode .dropdown-menu a:hover,body.dark-mode .dropdown a:hover {background:#22314a !important;color:#fff !important}
+body.dark-mode .btn-close{filter:invert(1) grayscale(100%) brightness(180%)}
+body.dark-mode hr{border-color:#304058 !important;opacity:1}
+
+/* page-specific common pieces */
+body.dark-mode .book-item,body.dark-mode .reader-item,body.dark-mode .employee-item,
+body.dark-mode .loan-item,body.dark-mode .category-item,body.dark-mode .list-row,
+body.dark-mode .advanced-shift-row,body.dark-mode .book-card,
+body.dark-mode .my-shift-item,body.dark-mode .today-roster-shift,body.dark-mode .calendar-shift-item,
+body.dark-mode .assignment-shift-option,body.dark-mode .assignment-multi-block,
+body.dark-mode .shift-calendar-detail,body.dark-mode .roster-person {
+  background:#172033 !important;color:#e8eef7 !important;border-color:#304058 !important;
+}
+body.dark-mode .today-roster-shift-head,body.dark-mode .shift-calendar-weekdays,
+body.dark-mode .assignment-selection-summary,body.dark-mode .calendar-detail-head,
+body.dark-mode .roster-person,body.dark-mode .calendar-roster-people .roster-person {
+  background:#1b293e !important;color:#dbe6f5 !important;border-color:#304058 !important;
+}
+body.dark-mode .shift-calendar-day{background:#172033 !important;color:#dbe6f5 !important;border-color:#304058 !important}
+body.dark-mode .shift-calendar-day:hover{background:#20304a !important}
+body.dark-mode .shift-calendar-day.outside{background:#111a29 !important;color:#64748b !important}
+body.dark-mode .shift-calendar-day.today{background:#173255 !important}
+body.dark-mode .calendar-detail-empty strong,body.dark-mode .calendar-shift-info>strong,
+body.dark-mode .my-shift-name strong,body.dark-mode .today-roster-shift-head strong,
+body.dark-mode .assignment-multi-head strong,body.dark-mode .assignment-shift-option .shift-choice-text strong {color:#edf4ff !important}
+body.dark-mode .advanced-shift-row small,body.dark-mode .calendar-shift-info span,
+body.dark-mode .my-shift-time,body.dark-mode .my-shift-note,body.dark-mode .today-roster-shift-head span,
+body.dark-mode .assignment-multi-head span,body.dark-mode .assignment-shift-option .shift-choice-text span {color:#9eacc0 !important}
+body.dark-mode .my-shift-item.live,body.dark-mode .today-roster-shift.live,body.dark-mode .calendar-shift-item.live {background:#123323 !important;border-color:#287a4b !important}
+body.dark-mode .my-shift-item.upcoming {background:#173255 !important;border-color:#335d91 !important}
+body.dark-mode .assignment-shift-option:has(input:checked){background:#18345a !important;border-color:#4f8cff !important}
+body.dark-mode .assignment-edit-note{background:#3b2f12 !important;color:#fde68a !important;border-color:#6b5520 !important}
+
+/* smart library */
+body.dark-mode .smart-library,body.dark-mode .smart-tabs,body.dark-mode .smart-dashboard,
+body.dark-mode .scan-box,body.dark-mode .smart-toolbar {background:#0f1723 !important;color:#e8eef7 !important;border-color:#304058 !important}
+body.dark-mode .smart-tabs button{background:#172033 !important;color:#b9c7da !important;border-color:#304058 !important}
+body.dark-mode .smart-tabs button.active{background:#2f6fed !important;color:#fff !important}
+body.dark-mode .pill{border-color:#40516b !important}
+
+/* header / account */
+body.dark-mode .admin-info{background:#172033 !important}
+body.dark-mode .admin-text h4{color:#eef4ff !important}
+body.dark-mode .admin-text p{color:#9eacc0 !important}
+body.dark-mode .smart-header-tools button{background:#172033 !important;color:#e8eef7 !important;border-color:#34445d !important}
+body.dark-mode .smart-header-tools kbd{background:#26354c !important;color:#cbd7e8 !important}
+body.dark-mode .command-shortcuts button,body.dark-mode .global-search-row button{background:#22314a !important;color:#e8eef7 !important;border-color:#3b4c66 !important}
+body.dark-mode .global-result{border-color:#2e3d53 !important}
+body.dark-mode .global-result:hover{background:#22314a !important}
+
+/* preserve status/action colors while remaining readable */
+body.dark-mode .badge.bg-light,body.dark-mode .text-bg-light {background:#26354c !important;color:#e8eef7 !important}
+body.dark-mode .status-available,body.dark-mode .badge-success {color:#9ff0bc !important}
+body.dark-mode a:not(.sidebar a):not(.btn){color:#79a8ff}
+body.dark-mode a:not(.sidebar a):not(.btn):hover{color:#a9c6ff}
+
+/* registered shift state */
+.advanced-shift-row button.shift-registered,
+.advanced-shift-row button.shift-approved {
+  cursor:not-allowed !important;
+  opacity:.62 !important;
+  box-shadow:none !important;
+}
+.advanced-shift-row button.shift-registered{background:#94a3b8 !important;color:#fff !important}
+.advanced-shift-row button.shift-approved{background:#22a06b !important;color:#fff !important;opacity:.72 !important}
+body.dark-mode .advanced-shift-row button.shift-registered{background:#4a596d !important;color:#d8e1ec !important}
+body.dark-mode .advanced-shift-row button.shift-approved{background:#1f6f50 !important;color:#dff8ec !important}
+
+/* ===== Dark mode v3: phủ toàn bộ các trang nghiệp vụ ===== */
+body.dark-mode #content .page-shell,
+body.dark-mode #content .page-shell .main,
+body.dark-mode #content .page-shell .content,
+body.dark-mode #content .page-shell .wrapper,
+body.dark-mode #content .page-shell .app,
+body.dark-mode #content .page-shell .container,
+body.dark-mode #content .page-shell .container-fluid,
+body.dark-mode .settings-main,
+body.dark-mode .settings-content,
+body.dark-mode .advanced-home,
+body.dark-mode .dangmuon-container,
+body.dark-mode .docgia-container,
+body.dark-mode .quahan-container,
+body.dark-mode .reader-container,
+body.dark-mode .employee-container {
+  background:#0f1723 !important;
+  color:#e7edf7 !important;
+}
+
+/* Những khung lớn trước đây còn nền trắng */
+body.dark-mode #content .page-shell .toolbar,
+body.dark-mode #content .page-shell .employee-toolbar,
+body.dark-mode #content .page-shell .quahan-search,
+body.dark-mode #content .page-shell .category-card,
+body.dark-mode #content .page-shell .table-card,
+body.dark-mode #content .page-shell .dashboard-table,
+body.dark-mode #content .page-shell .stat-card,
+body.dark-mode #content .page-shell .docgia-chart,
+body.dark-mode #content .page-shell .quahan-table,
+body.dark-mode #content .page-shell .employee-form,
+body.dark-mode #content .page-shell .category-form,
+body.dark-mode #content .page-shell .card,
+body.dark-mode #content .page-shell .dashboard-card,
+body.dark-mode .reader-container,
+body.dark-mode .employee-form,
+body.dark-mode .category-form,
+body.dark-mode .shift-stat,
+body.dark-mode .shift-toolbar,
+body.dark-mode .shift-card,
+body.dark-mode .shift-calendar-main,
+body.dark-mode .shift-calendar-detail,
+body.dark-mode .quahan-card,
+body.dark-mode .quahan-table,
+body.dark-mode .dangmuon-container .book-card,
+body.dark-mode .dangmuon-container .borrow-summary-card,
+body.dark-mode .docgia-container .docgia-info-card,
+body.dark-mode .docgia-container .docgia-chart,
+body.dark-mode .settings-card,
+body.dark-mode .backup-card,
+body.dark-mode .email-test-card,
+body.dark-mode .account-group,
+body.dark-mode .recent-registration-box,
+body.dark-mode .libinfo-hero,
+body.dark-mode .libinfo-panel,
+body.dark-mode .libinfo-summary-card,
+body.dark-mode .libinfo-item,
+body.dark-mode .borrow-section,
+body.dark-mode .reservation-toolbar,
+body.dark-mode .dashboard-full-list,
+body.dark-mode .dashboard-list-search {
+  background:#172033 !important;
+  color:#e7edf7 !important;
+  border-color:#304058 !important;
+  box-shadow:none !important;
+}
+
+/* Bootstrap / utility backgrounds that stayed white */
+body.dark-mode #content .bg-white,
+body.dark-mode #content .bg-light,
+body.dark-mode #content .card-body,
+body.dark-mode #content .card-header.bg-white,
+body.dark-mode #content .form,
+body.dark-mode #content .detail-box,
+body.dark-mode #content .confirm-box {
+  background:#172033 !important;
+  color:#e7edf7 !important;
+  border-color:#304058 !important;
+}
+
+/* Typography: prevent white-on-white / pale-on-white */
+body.dark-mode #content .top h2,
+body.dark-mode #content .employee-form h3,
+body.dark-mode #content .category-form h3,
+body.dark-mode #content .card-title-wrap h3,
+body.dark-mode #content .libinfo-hero h2,
+body.dark-mode #content .libinfo-panel h3,
+body.dark-mode #content .libinfo-summary-card strong,
+body.dark-mode #content .libinfo-item strong,
+body.dark-mode #content .recent-registration-info strong,
+body.dark-mode #content .borrow-count,
+body.dark-mode #content .number,
+body.dark-mode #content strong,
+body.dark-mode #content b {
+  color:#eef4ff !important;
+}
+body.dark-mode #content .libinfo-hero p,
+body.dark-mode #content .libinfo-panel p,
+body.dark-mode #content .libinfo-summary-card span,
+body.dark-mode #content .libinfo-item span,
+body.dark-mode #content .recent-registration-time span,
+body.dark-mode #content .borrow-summary-note,
+body.dark-mode #content .borrow-section-note,
+body.dark-mode #content .customer-summary-note,
+body.dark-mode #content .shift-stat span {
+  color:#9eacc0 !important;
+}
+
+/* Form labels and borders */
+body.dark-mode #content .employee-grid label,
+body.dark-mode #content .employee-status label,
+body.dark-mode #content .category-form label,
+body.dark-mode #content .grid label,
+body.dark-mode #content .field label,
+body.dark-mode #content .form-grid label,
+body.dark-mode #content .account-group label {
+  color:#cbd7e8 !important;
+}
+body.dark-mode #content input,
+body.dark-mode #content select,
+body.dark-mode #content textarea,
+body.dark-mode #content .form-control,
+body.dark-mode #content .form-select {
+  background:#111b2b !important;
+  color:#eef4ff !important;
+  border-color:#40516b !important;
+}
+body.dark-mode #content input::placeholder,
+body.dark-mode #content textarea::placeholder { color:#8797ad !important; }
+
+/* Table / pagination areas */
+body.dark-mode #content .table-wrapper,
+body.dark-mode #content .employee-table-wrapper,
+body.dark-mode #content .table-responsive,
+body.dark-mode #content .dashboard-table-area {
+  background:#172033 !important;
+  color:#e7edf7 !important;
+  border-color:#304058 !important;
+}
+body.dark-mode #content .pagination .page-link,
+body.dark-mode #content .page-link {
+  background:#172033 !important;
+  color:#cbd7e8 !important;
+  border-color:#40516b !important;
+}
+body.dark-mode #content .pagination .active .page-link,
+body.dark-mode #content .page-link.active { background:#2563eb !important;color:#fff !important;border-color:#2563eb !important; }
+
+/* Dashboard home */
+body.dark-mode .adv-metric,
+body.dark-mode .advanced-card,
+body.dark-mode .home-book button,
+body.dark-mode .profile-chip,
+body.dark-mode .quick-actions button {
+  background:#172033 !important;
+  color:#e7edf7 !important;
+  border-color:#304058 !important;
+}
+body.dark-mode .adv-row,
+body.dark-mode .home-book { border-color:#304058 !important; }
+body.dark-mode .adv-metric span,
+body.dark-mode .home-book small,
+body.dark-mode .profile-chip span { color:#9eacc0 !important; }
+
+/* Library info page (inline CSS had high visual impact) */
+body.dark-mode .libinfo-hero { background:linear-gradient(135deg,#172033,#1d2940) !important; }
+body.dark-mode .libinfo-btn.light { background:#172033 !important;color:#8cb4ff !important;border-color:#40516b !important; }
+body.dark-mode .libinfo-item { background:#111b2b !important; }
+
+/* Statistics / charts: canvas transparent on dark panels */
+body.dark-mode .docgia-chart,
+body.dark-mode .dangmuon-container .book-card,
+body.dark-mode .dangmuon-container .borrow-summary-card,
+body.dark-mode .stat-card,
+body.dark-mode .chart-card,
+body.dark-mode .chart-container,
+body.dark-mode .chart-box,
+body.dark-mode .docgia-pie-box {
+  background:#172033 !important;
+  border-color:#304058 !important;
+}
+body.dark-mode canvas { background:transparent !important; }
+body.dark-mode .borrow-summary-total { background:#111b2b !important;border-color:#304058 !important;color:#e7edf7 !important; }
+
+/* Shift page - all surrounding white areas */
+body.dark-mode .shift-page,
+body.dark-mode .shift-container,
+body.dark-mode .shift-calendar-wrap,
+body.dark-mode .shift-calendar-card,
+body.dark-mode .employee-shift-overview,
+body.dark-mode .assignment-date-list,
+body.dark-mode .assignment-shift-choices {
+  background:#0f1723 !important;
+  color:#e7edf7 !important;
+}
+body.dark-mode .shift-stat,
+body.dark-mode .shift-toolbar,
+body.dark-mode .shift-calendar-main,
+body.dark-mode .shift-calendar-detail,
+body.dark-mode .assignment-multi-block {
+  background:#172033 !important;
+  border-color:#304058 !important;
+}
+
+/* Modal / confirmation */
+body.dark-mode .confirm,
+body.dark-mode .account-modal,
+body.dark-mode .book-detail-modal,
+body.dark-mode .copy-qr-modal { color:#e7edf7 !important; }
+body.dark-mode .confirm-box,
+body.dark-mode .account-modal-box,
+body.dark-mode .book-detail-modal-box,
+body.dark-mode .copy-qr-modal-box {
+  background:#172033 !important;
+  color:#e7edf7 !important;
+  border-color:#304058 !important;
+}
+
+/* Settings rows that stayed white */
+body.dark-mode .backup-details > *,
+body.dark-mode .system-info-row,
+body.dark-mode .info-row,
+body.dark-mode .recent-registration-item {
+  background:#111b2b !important;
+  color:#e7edf7 !important;
+  border-color:#304058 !important;
+}
+
+/* Do not bleach semantic buttons/badges */
+body.dark-mode .btn-primary,body.dark-mode .btn-danger,body.dark-mode .btn-warning,body.dark-mode .btn-success,
+body.dark-mode .employee-save,body.dark-mode .employee-edit,body.dark-mode .employee-delete,
+body.dark-mode .save,body.dark-mode .delete,body.dark-mode .edit,
+body.dark-mode .status,body.dark-mode .badge { box-shadow:none; }
